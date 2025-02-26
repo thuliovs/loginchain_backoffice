@@ -12,7 +12,7 @@ export default function WelcomePage() {
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3000/api/session", {
+        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_APIS_URL_REMOTE}/api/session`, {
           withCredentials: true, // Envia o JWT armazenado no cookie
         });
 
@@ -35,7 +35,7 @@ export default function WelcomePage() {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:3000/api/logout", {}, { withCredentials: true });
+      await axios.post(`${process.env.NEXT_PUBLIC_APIS_URL_REMOTE}/api/logout`, {}, { withCredentials: true });
       toast.info("Logout realizado!");
       router.push("/auth");
     } catch (error) {

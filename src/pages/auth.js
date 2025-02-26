@@ -68,7 +68,7 @@ export default function Auth() {
       setIsAuthenticating(true);
 
       const { data } = await axios.post(
-        "http://localhost:3000/api/loginBlockchain",
+        `${process.env.NEXT_PUBLIC_APIS_URL_REMOTE}/api/loginBlockchain`,
         { walletAddress, message, signature },
         { withCredentials: true }
       );

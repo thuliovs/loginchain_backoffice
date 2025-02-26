@@ -19,7 +19,7 @@ export default function Auth() {
   useEffect(() => {
     const checkBlockchainStatus = async () => {
       try {
-        const { data, status } = await axios.get("http://localhost:3000/api/blockchain-status", {
+        const { data, status } = await axios.get(`${process.env.NEXT_PUBLIC_APIS_URL_REMOTE}/api/blockchain-status`, {
           validateStatus: () => true // Permite capturar qualquer status sem gerar erro
         });
 

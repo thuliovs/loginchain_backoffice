@@ -127,8 +127,8 @@ export default function Auth() {
         <ToastContainer position="top-right" autoClose={3000} />
       </div>
 
-      {/* ✅ Indicador LED da Blockchain no canto inferior direito */}
-      <div className="absolute bottom-5 right-5 flex items-center space-x-2">
+      {/* ✅ Indicador LED da Blockchain no canto superior direito */}
+      <div className="absolute top-5 right-5 flex items-center space-x-2">
         {networkError && <FiAlertTriangle className="text-red-500 text-xl animate-bounce" />}
 
         {!networkError && (
